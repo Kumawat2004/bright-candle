@@ -13,19 +13,18 @@ body {
 }
 
 :root {
-  --primary-color: #fce4ec;    
+  --primary-color: #80808013;    
   --accent-color: #e91e63;
   --highlight-color: #9c27b0;   
-  --text-color: #4a3f35;        
-  --hover-color: #ffca28;       
+  --text-color: #4a3f35;              
   --dropdown-bg: #ffffff;       
   --overlay-bg: rgba(0,0,0,0.55); 
 }
 
 /* Navbar */
 .navbar {
-  background-color: var(--primary-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.767);
 }
 
 .navbar-brand img {
@@ -252,9 +251,9 @@ body {
 }
 
 .btn-outline-light:hover {
-  background-color: var(--hover-color);
-  color: var(--text-color);
-  box-shadow: 0 6px 20px rgba(255, 202, 40, 0.6);
+  background-color: var(--highlight-color);
+  color: var(--dropdown-bg);
+  box-shadow: 0 6px 20px rgba(155, 39, 176, 0.555);
   transform: scale(1.07);
 }
 
@@ -549,6 +548,336 @@ body {
 }
 
 
+/* Contact Form Section */
+
+.contact-form {
+  background-color: var(--primary-color);
+  width: 100%;
+}
+
+.contact-section {
+  padding: 0 200px;
+  color: var(--text-color);
+}
+
+.subheading {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+}
+
+.line-input {
+  border: none;
+  border-bottom: 2px solid var(--accent-color);
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.line-input:focus {
+  border-bottom-color: var(--highlight-color);
+  box-shadow: none;
+  outline: none;
+}
+
+.service-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.newsletter-box {
+  background-color: #e9f1f4;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.newsletter-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Layouts */
+@media (max-width: 1199px) {
+  .contact-section {
+    padding: 0 100px;
+  }
+}
+
+@media (max-width: 991px) {
+  .contact-section {
+    padding: 0 50px;
+  }
+
+  .newsletter-box {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-section {
+    padding: 0 20px;
+  }
+
+  .newsletter-box {
+    padding: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .subheading {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .line-input {
+    font-size: 0.95rem;
+  }
+
+  .form-label {
+    font-size: 0.9rem;
+  }
+
+  .custom-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .contact-section {
+    padding: 0 10px;
+  }
+
+  .newsletter-box h4 {
+    font-size: 1.2rem;
+  }
+}
 
 
+/* Disclaimer Section */
 
+.disclaimer-section {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.disclaimer-text {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #4a4a4a;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: justify;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+@media (max-width: 576px) {
+  .disclaimer-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .disclaimer-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
+
+/* Footer Section */
+.footer-section {
+  background-color: var(--primary-color);
+  color: black;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+.footer-logo {
+  width: 160px;
+  filter: none; 
+  margin-bottom: 25px;
+}
+
+/* Footer nav */
+.footer-nav {
+  padding-left: 0;
+  list-style: none;
+  font-size: 1rem;
+  position: relative;
+}
+
+.footer-nav > li {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.footer-nav a {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--accent-color);
+}
+
+/* Icons color */
+.footer-nav a i {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+}
+
+/* Dropdown menu base */
+.footer-nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  padding: 0.5rem 0;
+  min-width: 180px;
+  border-radius: 6px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+/* Dropdown submenu positioning */
+.footer-nav .dropdown-submenu {
+  position: relative;
+}
+
+.footer-nav .dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 0.1rem;
+  border-radius: 6px;
+}
+
+/* Show dropdown on hover */
+.footer-nav li.footer-dropdown:hover > .dropdown-menu,
+.footer-nav li.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown menu links */
+.footer-nav .dropdown-menu a {
+  padding: 0.4rem 1rem;
+  color: black;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-nav .dropdown-menu a:hover {
+  background-color: var(--highlight-color);
+  color: white;
+  text-decoration: none;
+}
+
+/* Contact info */
+.contact-info li {
+  margin-bottom: 14px;
+  font-size: 1rem;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.contact-info i {
+  color: var(--accent-color);
+  margin-right: 12px;
+  font-size: 1.3rem;
+  min-width: 26px;
+}
+
+/* Footer heading */
+.footer-heading {
+  font-weight: 700;
+  color: var(--highlight-color);
+  margin-bottom: 1.2rem;
+  font-size: 1.3rem;
+}
+
+/* Footer description */
+.footer-desc {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Social icons */
+.social-icons a {
+  margin-right: 12px;
+  font-size: 1.5rem;
+  display: inline-block;
+  color: white;
+  border-radius: 8px;
+  padding: 8px 14px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-icons a:nth-child(1) {
+  background: #3b5998; /* Facebook blue */
+}
+
+.social-icons a:nth-child(2) {
+  background: #e1306c; /* Instagram pink */
+}
+
+.social-icons a:nth-child(3) {
+  background: #ff0000; /* YouTube red */
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Footer bottom */
+.footer-bottom {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 40px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.footer-bottom a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+  color: var(--highlight-color);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .footer-section .row > div {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .footer-nav a {
+    justify-content: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
