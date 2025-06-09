@@ -13,17 +13,17 @@ body {
 }
 
 :root {
-  --primary-color: #80808013;    
-  --accent-color: #e91e63;
-  --highlight-color: #9c27b0;   
-  --text-color: #4a3f35;              
-  --dropdown-bg: #ffffff;       
-  --overlay-bg: rgba(0,0,0,0.55); 
+  --primary-color: #f6f0ed;        /* Soft blush background */
+  --accent-color: #d83c7c;         /* Vibrant rose pink */
+  --highlight-color: #7b3f61;      /* Deep mauve/plum */
+  --text-color: #4a3f35;           /* Warm brown */
+  --dropdown-bg: #ffffff;          /* White */
+  --overlay-bg: rgba(0,0,0,0.55);  /* Dark overlay */
 }
 
 /* Navbar */
 .navbar {
-  background-color: #fff;
+  background-color: var(--primary-color);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.767);
 }
 
@@ -101,7 +101,7 @@ body {
   left: -10%;
   width: 120%;
   height: 100%;
-  background: url('../Images/hero.jpeg') center right/cover no-repeat;
+  background: url('../Images/hero.jpg') center right/cover no-repeat;
   z-index: -1;
   transform: scale(1.05);
   animation: zoomPan 15s infinite alternate;
@@ -177,7 +177,6 @@ body {
 
 /* Services Section */
 .services-section {
-  background-color: var(--dropdown-bg);
   padding: 5rem 0;
   color: var(--text-color);
   font-family: 'Playfair Display', serif;
@@ -203,36 +202,48 @@ body {
   border-radius: 3px;
 }
 
-.service-card {
-  background: white;
-  border-radius: 16px;
-  padding: 2.5rem 2rem;
-  box-shadow: 0 8px 20px rgba(156, 39, 176, 0.15);
-  color: var(--text-color);
+.service-img-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  height: 260px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: default;
-  min-height: 320px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
-.service-card h5 {
-  color: var(--accent-color);
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+.service-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.service-img-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(247, 221, 128, 0.637);
+}
+
+.service-img-box:hover img {
+  transform: scale(1.05);
+}
+
+.service-label {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  color: #000;
   font-weight: 700;
-}
-
-.service-card p {
   font-size: 1rem;
-  line-height: 1.5;
-  flex-grow: 1;
-}
-
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(233, 30, 99, 0.3);
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 4px solid #b48a37;
+  font-family: 'Playfair Display', serif;
+  box-shadow: 0 4px 12px rgba(245, 218, 131, 0.1);
+  text-align: center;
+  white-space: nowrap;
 }
 
 /* Button */
@@ -240,8 +251,8 @@ body {
   background-color: var(--accent-color);
   color: var(--dropdown-bg);
   border: none;
-  font-weight: 700;
-  padding: 0.85rem 2.2rem;
+  font-weight: 500;
+  padding: 1rem 3rem;
   border-radius: 30px;
   transition: background-color 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 10px rgba(233, 30, 99, 0.4);
@@ -251,70 +262,55 @@ body {
 }
 
 .btn-outline-light:hover {
-  background-color: var(--highlight-color);
+  background-color:#b48a37;
   color: var(--dropdown-bg);
-  box-shadow: 0 6px 20px rgba(155, 39, 176, 0.555);
+  box-shadow: 0 6px 20px rgba(176, 146, 39, 0.43);
   transform: scale(1.07);
 }
 
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .service-card {
-    min-height: auto;
-  }
-}
 
 /* Why Choose Us Section */
-.why-choose-section {
+.why-choose-section{
   background-color: var(--primary-color);
-  padding: 5rem 0;
-  font-family: 'Playfair Display', serif;
-  color: var(--text-color);
-}
-
-.why-title {
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: var(--highlight-color);
-  position: relative;
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
-.why-title::after {
-  content: "";
-  display: block;
-  width: 90px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent-color), var(--highlight-color));
-  margin: 0.75rem auto 0 auto;
-  border-radius: 3px;
 }
 
 .why-box {
-  background: rgba(255 255 255 / 0.6);
+  position: relative;
+  background-size: cover;
+  background-position: center;
   border-radius: 16px;
-  padding: 2rem 1.5rem;
-  min-height: 260px;
-  box-shadow: 0 8px 20px rgba(156, 39, 176, 0.15);
-  text-align: center;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  color: var(--text-color);
-  backdrop-filter: blur(6px);
+  height: 260px;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  cursor: default;
-
-  /* Animation added */
+  box-shadow: 0 8px 20px rgba(156, 39, 176, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   animation: zoomFade 0.9s ease forwards;
   transform: scale(0.95);
   opacity: 0;
+  cursor: default;
 }
 
 .why-box:hover {
   transform: scale(1.03) translateY(-10px);
-  box-shadow: 0 15px 30px rgba(233, 30, 99, 0.3);
+  box-shadow: 0 15px 30px rgb(233 204 189 / 92%);
+}
+
+.why-overlay {
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.why-overlay h5 {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #000;
+  margin: 0;
+  font-family: 'Playfair Display', serif;
 }
 
 @keyframes zoomFade {
@@ -328,31 +324,6 @@ body {
   }
 }
 
-
-/* Icon Style */
-.why-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60px;
-  height: auto;
-  margin: 0 auto 10px; 
-  display: block;      
-  filter: none;
-  transition: filter 0.3s ease;
-}
-
-.why-box:hover .why-icon {
-  filter: drop-shadow(0 0 5px var(--accent-color));
-}
-
-/* Headings */
-.why-box h5 {
-  font-weight: 700;
-  font-size: 1.3rem;
-  color: var(--accent-color);
-  margin: 0;
-}
 
 /* Our Work Section */
 .our-work-section {
@@ -377,7 +348,7 @@ body {
 
 .work-box:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(233, 30, 99, 0.25);
+  box-shadow: 0 15px 30px rgb(233 204 189 / 92%);
 }
 
 .work-box img {
@@ -393,70 +364,42 @@ body {
 }
 
 /* Destination Section */
-.destination-section{
+.destination-section {
   background-color: var(--primary-color);
 }
 
-.destination-card {
+.destination-box {
+  background-color: #fff;
+  border-radius: 10px;
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(156, 39, 176, 0.1);
-  transition: transform 0.4s ease, box-shadow 0.3s ease;
-  height: 240px;
-  cursor: pointer;
-  background-color: white;
-  position: relative;
-  animation: zoomFade 0.9s ease forwards;
-  transform: scale(0.96);
-  opacity: 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
 }
 
-@keyframes zoomFade {
-  0% {
-    transform: scale(0.92);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+.destination-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(250, 225, 143, 0.437);
 }
 
-.destination-card:hover {
-  transform: scale(1.03) translateY(-6px);
-  box-shadow: 0 10px 25px rgba(233, 30, 99, 0.25);
-}
-
-.card-img-top {
+.destination-box img {
   width: 100%;
-  height: 100%;
+  height: 200px;
   object-fit: cover;
-  transition: transform 0.4s ease;
   display: block;
 }
 
-.destination-card:hover .card-img-top {
-  transform: scale(1.07);
-}
-
-.img-label {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #000;
-  padding: 5px 12px;
+.destination-label {
   font-weight: 700;
-  font-size: 1rem;
-  border-radius: 4px;
+  font-size: 1.1rem;
+  margin: 12px 0 16px;
   font-family: 'Playfair Display', serif;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  color: var(--text-color, #000);
 }
 
-/* Optional: Hide the original card-body if still present */
-.card-body {
-  display: none !important;
-}
+
+
+
+
 
 /* Featured Section */
 
@@ -582,14 +525,14 @@ body {
   outline: none;
 }
 
-.service-label {
+.service-label1 {
   font-weight: 600;
   font-size: 0.9rem;
   color: var(--text-color);
 }
 
 .newsletter-box {
-  background-color: #e9f1f4;
+  background-color: #f8f2d96d;
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
