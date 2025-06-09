@@ -101,7 +101,7 @@ body {
   left: -10%;
   width: 120%;
   height: 100%;
-  background: url('../Images/hero.jpg') center right/cover no-repeat;
+  background: url('../Images/hero2.jpg') center right/cover no-repeat;
   z-index: -1;
   transform: scale(1.05);
   animation: zoomPan 15s infinite alternate;
@@ -270,60 +270,38 @@ body {
 
 
 /* Why Choose Us Section */
-.why-choose-section{
+.why-choose-section {
   background-color: var(--primary-color);
 }
 
-.why-box {
-  position: relative;
-  background-size: cover;
-  background-position: center;
+.why-box.icon-style {
+  background-color: #fff; /* golden-brown background */
+  padding: 2rem 1rem;
   border-radius: 16px;
-  height: 260px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 20px rgba(156, 39, 176, 0.15);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  animation: zoomFade 0.9s ease forwards;
-  transform: scale(0.95);
-  opacity: 0;
-  cursor: default;
-}
-
-.why-box:hover {
-  transform: scale(1.03) translateY(-10px);
-  box-shadow: 0 15px 30px rgb(233 204 189 / 92%);
-}
-
-.why-overlay {
-  background-color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(8px);
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
   text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-.why-overlay h5 {
-  font-weight: 700;
-  font-size: 1.3rem;
+.why-box.icon-style:hover {
+  transform: scale(1.03) translateY(-10px);
+  box-shadow: 0 15px 30px rgba(254, 220, 126, 0.438);
+}
+
+.why-box.icon-style img {
+  height: 80px;
+  width: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  filter: brightness(1) invert(0);
+}
+
+.why-box.icon-style p {
   color: #000;
-  margin: 0;
+  font-weight: 600;
+  font-size: 1.1rem;
   font-family: 'Playfair Display', serif;
 }
-
-@keyframes zoomFade {
-  0% {
-    transform: scale(0.92);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
 
 /* Our Work Section */
 .our-work-section {
